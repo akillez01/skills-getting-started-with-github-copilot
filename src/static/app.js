@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function fetchActivities() {
     try {
-      const response = await fetch("/activities");
+      const response = await fetch("/activities", { cache: "no-store" });
       activitiesData = await response.json();
       renderActivities();
     } catch (error) {
